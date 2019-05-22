@@ -1,0 +1,28 @@
+/** Notificaciones **/
+ .notificacion {
+     position: fixed;
+     top: 8rem;
+     right: 0;
+     padding: 1rem 3rem;
+     opacity: 0;
+     transition: opacity .5s ease;
+}
+.visible {
+     opacity: 1;
+} 
+
+.sombra {
+     -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, .5);
+     -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, .5);
+     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, .5);
+     border-radius: 10px;
+}
+/** Colores de la notificación **/
+.correcto {
+     background-color: rgb(179, 241, 117);
+     color: green;
+}
+.error {
+     background-color: rgb(238, 148, 166);
+     color: rgb(163, 0, 33);
+} 
