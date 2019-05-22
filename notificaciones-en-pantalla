@@ -1,0 +1,41 @@
+if(nombre === '' || apellido === '' || telefono === '' || email === '' || msj === '') {
+          // 2 parametros: texto y clase
+          mostrarNotificacion('Todos los campos son obligatorios', 'error');
+          submit = false;
+      } else if(correoCorrecto(email) == false) {
+          mostrarNotificacion('Ingresa un email válido', 'error');
+          submit = false;
+     } else{
+           // Pasa la validación
+          mostrarNotificacion('Mensaje enviado Correctamente', 'correcto');
+          
+      }
+      if (submit === false) {
+          e.preventDefault();
+      } 
+     
+     
+// Notificación en pantalla
+function mostrarNotificacion(mensaje, clase) {
+     const notificacion = document.createElement('div');
+     notificacion.classList.add(clase, 'notificacion', 'sombra');
+     notificacion.textContent = mensaje;
+
+     // formulario
+     formulario.insertBefore(notificacion, document.querySelector('form h3'));
+
+     // Ocultar y Mostrar la notificacion
+     setTimeout(() => {
+          notificacion.classList.add('visible');
+
+          setTimeout(() => {
+               notificacion.classList.remove('visible');
+               setTimeout(() => {
+                    notificacion.remove();
+               }, 500)
+          }, 3000); // despues de 3 segundos se remueve la clase
+     }, 100);
+}     
+      
+      
+      
